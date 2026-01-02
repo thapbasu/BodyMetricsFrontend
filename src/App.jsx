@@ -4,6 +4,7 @@ import Register from './pages/Register';
 import Dashboard from "./pages/Dashboard.jsx";
 import AddMeasurementForm from "./pages/AddMeasurementForm.jsx";
 import ProgressAnalytics from "./pages/ProgressAnalytics.jsx";
+import ProtectedRoute from './routes/ProtectedRoutes.jsx';
 
 export default function App() {
     return (
@@ -11,10 +12,12 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route element={<ProtectedRoute />}>
+
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/add-measurement-form" element={<AddMeasurementForm />} />
                 <Route path="/progress-analytics" element={<ProgressAnalytics />} />
-
+                </Route>
             </Routes>
         </Router>
     );
